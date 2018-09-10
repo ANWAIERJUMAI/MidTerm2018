@@ -16,6 +16,8 @@ public static void main(String[] args) {
         map.put(4, "Boston");
         map.put(5, "San Jose");
         map.put(5, "Seattle");
+        System.out.println(map.values());
+        System.out.println(map.size());
 
 
     }

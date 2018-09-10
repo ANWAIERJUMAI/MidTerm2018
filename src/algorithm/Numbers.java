@@ -40,7 +40,8 @@ public class Numbers {
 		long insertionSortExecutionTime = algo.executionTime;
 		System.out.println("Total Execution Time of " + num.length + " numbers in Insertion Sort take: " + insertionSortExecutionTime + " milli sec");
 
-		//By following above, Continue for rest of the Sorting Algorithm....
+		//By following above, Continue for rest of the Sorting Algorithm..
+
 
 
 
@@ -52,7 +53,7 @@ public class Numbers {
 	public static void storeRandomNumbers(int [] num){
 		Random rand = new Random();
 		for(int i=0; i<num.length; i++){
-			num[i] = rand.nextInt(1000000);
+			num[i] = rand.nextInt(100000);
 		}
 	}
 

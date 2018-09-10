@@ -61,8 +61,9 @@ public class CsvReader {
                 System.out.print("Shame on You !--> ");
                 System.out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getNumberOfExercisesSolved());
             }
+            }
         }
 
     }
 
-}
+
