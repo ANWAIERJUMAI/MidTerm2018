@@ -13,6 +13,7 @@ public class Sort {
         final long startTime = System.currentTimeMillis();
         int [] list = array;
 
+
         for(int j=0; j<array.length-1; j++){
             int min = j;
             for(int i=j+1; i<array.length; i++) {
@@ -102,6 +103,7 @@ public class Sort {
     }
 
     public static void printSortedArray(int [] array){
+
         for(int i=0; i<array.length; i++){
             System.out.println(array[i]);
         }

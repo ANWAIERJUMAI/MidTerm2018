@@ -1,5 +1,6 @@
 package databases;
 
+import com.sun.tools.internal.xjc.reader.xmlschema.bindinfo.BIConversion;
 import parser.Student;
 
 import java.io.FileInputStream;
@@ -16,6 +17,9 @@ import java.util.Properties;
  */
 
 public class ConnectToSqlDB {
+    public static final String URL="jdbc:mysql://localhost:3306/student";
+    public static final String USER="root";
+    public static final String PASSWORD="mysql@926341";
 
     public static Connection connect = null;
     public static Statement statement = null;
@@ -48,7 +52,7 @@ public class ConnectToSqlDB {
         try {
             connectToSqlDatabase();
             statement = connect.createStatement();
-            resultSet = statement.executeQuery("select * from " + tableName);
+            resultSet = statement.executeQuery("select * from student");
             data = getResultSetData(resultSet, columnName);
         } catch (ClassNotFoundException e) {
             throw e;
@@ -211,9 +215,16 @@ public class ConnectToSqlDB {
     }
 
     public static void main(String[] args)throws IOException, SQLException, ClassNotFoundException {
-        List<User> list = readUserProfileFromSqlTable();
-        for(User user:list){
-            System.out.println(user.getStName() + " " + user.getStID()+ " " + user.getStDOB());
+        Connection mycon= DriverManager.getConnection(URL,USER,PASSWORD);
+        Statement myStmt= mycon.createStatement();
+        ResultSet myRs= myStmt.executeQuery("select * from student");
+        while(myRs.next()) {
+            System.out.println("ID #" + myRs.getString("stID") + " " + "" + myRs.getString("stName" + " " + myRs
+                    .getString("stDOB")));
         }
-    }
-}
+        }
+        //List<User> list = readUserProfileFromSqlTable();
+       // for(User user:list){
+           // System.out.println(user.getStName() + " " + user.getStID()+ " " + user.getStDOB());
+        }
+

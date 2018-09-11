@@ -39,4 +39,5 @@ public class User {
     public void setStDOB(String stDOB) {
         this.stDOB = stDOB;
     }
+
 }

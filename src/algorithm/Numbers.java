@@ -9,6 +9,9 @@ import java.util.Random;
  *Created by mrahman on 04/02/2018.
  */
 public class Numbers {
+	public static final String URL="jdbc:mysql://localhost:3306/student";
+	public static final String USER="root";
+	public static final String PASSWORD="mysql@926341";
 
 	/*
 	 * Show all the different kind of sorting algorithm by applying into (num array).
@@ -29,13 +32,13 @@ public class Numbers {
 		Sort algo = new Sort();
 		algo.selectionSort(num);
 		long selectionSortExecutionTime = algo.executionTime;
+		//Insertion Sort
 		System.out.println("Total Execution Time of "+ num.length + " numbers in Selection Sort take: " + selectionSortExecutionTime + " milli sec");
-        connectToSqlDB.insertDataFromArrayToSqlTable(num, "selection_sort", "SortingNumbers");
-        List<String> numbers = connectToSqlDB.readDataBase("selection_sort", "SortingNumbers");
-        printValue(numbers);
+		connectToSqlDB.insertDataFromArrayToSqlTable(num, "selection_sort", "SortingNumbers");
+		List<String> numbers = connectToSqlDB.readDataBase("selection_sort", "SortingNumbers");
+		printValue(numbers);
 		int n = num.length;
 		randomize (num, n);
-		//Insertion Sort
 		algo.insertionSort(num);
 		long insertionSortExecutionTime = algo.executionTime;
 		System.out.println("Total Execution Time of " + num.length + " numbers in Insertion Sort take: " + insertionSortExecutionTime + " milli sec");

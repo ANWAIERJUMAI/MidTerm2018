@@ -102,6 +102,15 @@ public class ConnectToMongoDB {
         List<User> user = readUserProfileFromMongoDB();
         for(User person:user){
             System.out.println(person.getStName()+ " "+ person.getStID());
+            insertIntoToMongoDB(new User ("Jeff", "1", "20/08/1990"));
+            List<User> user1= readUserProfileFromMongoDB();
+            for(User member:user1){
+                System.out.println(member.getStName()+" "+ member.getStID());
+
+            }
+            {
+
+            }
         }
     }
 }
